@@ -4,6 +4,7 @@ default allow = false
 
 allow {
 	is_expected_client_id
+	us_users
 }
 
 is_expected_client_id {
@@ -15,4 +16,10 @@ bearer_token := t {
 	v := input.request.headers.Authorization
 	startswith(v, "Bearer ")
 	t := substring(v, count("Bearer "), -1)
+}
+
+us_users[users] {
+  some user
+  data.example.users[user].location.country == "US"
+  users := user
 }
