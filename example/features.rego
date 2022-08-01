@@ -4,9 +4,7 @@ default allow = false
 
 allow {
 	is_expected_client_id
-	some users
-	us_users[users]
-	users != null
+	us_users
 }
 
 is_expected_client_id {
@@ -20,8 +18,6 @@ bearer_token := t {
 	t := substring(v, count("Bearer "), -1)
 }
 
-us_users[users] {
-  some user
-  data.example.users[input.user].location.country == "US"
-  users := user
+us_users {
+  input.country == "US"
 }
