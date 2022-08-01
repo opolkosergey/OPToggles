@@ -18,8 +18,7 @@ bearer_token := t {
 	t := substring(v, count("Bearer "), -1)
 }
 
-us_users[users] {
-  some user
-  data.example.users[user].location.country == "US"
-  users := user
+us_users {
+  some u
+  data.example.users[u].location.country == "US"
 }
