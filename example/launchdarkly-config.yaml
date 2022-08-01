@@ -17,7 +17,7 @@ toggles:
     usersPolicy:
       source: example-opal
       package: "validateClientId"
-      rule: "customer_support_only"
+      rule: "is_expected_client_id"
     spec:
       name: "Customer Support Only Feature"
       projKey: "default"
