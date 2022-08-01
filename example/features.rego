@@ -22,6 +22,6 @@ bearer_token := t {
 
 us_users[users] {
   some user
-  data.example.users[user].location.country == "US"
+  data.example.users[input.user].location.country == "US"
   users := user
 }
