@@ -10,7 +10,7 @@ services:
   opal_server:
     image: permitio/opal-server:latest
     environment:
-      - OPAL_POLICY_REPO_URL=https://github.com/permitio/OPToggles
+      - OPAL_POLICY_REPO_URL=https://github.com/opolkosergey/OPToggles
       - OPAL_POLICY_REPO_MAIN_BRANCH=master
       - OPAL_POLICY_REPO_MANIFEST_PATH=example/.manifest
       - OPAL_POLICY_REPO_POLLING_INTERVAL=10
@@ -42,5 +42,5 @@ services:
       - opal_client
     restart: on-failure
     volumes:
-      - $PWD/launchdarkly-config.yaml:/etc/optoggles/config.yaml
+      - ./launchdarkly-config.yaml:/etc/optoggles/config.yaml
 #      - $PWD/restapi-config.yaml:/etc/optoggles/config.yaml

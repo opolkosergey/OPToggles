@@ -10,24 +10,15 @@ target:
   targetType: launchdarkly
   targetSpec:
     # Replace with your API token
-    launchdarklyToken: "api-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    launchdarklyToken: ""
 
 toggles:
-  - key: "us-feature"
+  - key: "cs-feature"
     usersPolicy:
       source: example-opal
-      package: "app.rbac"
-      rule: "us_users"
+      package: "validateClientId"
+      rule: "customer_support_only"
     spec:
-      name: "US Only Feature"
+      name: "Customer Support Only Feature"
       projKey: "default"
       environments: [ "production", "test" ]
-  - key: "billing-feature"
-    usersPolicy:
-      source: example-opal
-      package: "app.rbac"
-      rule: "billing_users"
-    spec:
-      name: "Billing Feature"
-      projKey: "default"
-      environments: [ "test" ]
