@@ -4,9 +4,6 @@ default allow = false
 
 allow {
 	is_expected_client_id
-}
-
-allow {
 	some users
 	us_users[users]
 	users != null
